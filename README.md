@@ -4,7 +4,7 @@ Repositório do projeto CardioIA (FIAP — Inteligência Artificial), uma plataf
 
 Nesta primeira fase o papel é o de cientista de dados hospitalar: levantar, organizar e entender os dados cardiológicos que vão alimentar os módulos inteligentes das fases seguintes, com atenção à governança de dados e ao viés.
 
-**Grupo 63**
+**Grupo**
 
 | Integrante | RM |
 |---|---|
