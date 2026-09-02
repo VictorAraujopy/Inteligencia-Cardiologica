@@ -4,7 +4,27 @@ Repositório do projeto CardioIA (FIAP — Inteligência Artificial), uma plataf
 
 Nesta primeira fase o papel é o de cientista de dados hospitalar: levantar, organizar e entender os dados cardiológicos que vão alimentar os módulos inteligentes das fases seguintes, com atenção à governança de dados e ao viés.
 
-**Grupo 63 — Victor Araujo Ferreira da Silva**
+**Grupo 63**
+
+| Integrante | RM |
+|---|---|
+| Jacqueline Nanami Matushima | RM568498 |
+| Pedro Zanon Castro Santana | RM567350 |
+| Victor Araujo Ferreira da Silva | RM567619 |
+
+## Links públicos dos dados
+
+Todo o conjunto preparado nesta fase está em uma única pasta pública do Google Drive, com permissão de leitura para qualquer pessoa com o link (sem login):
+
+**Pasta completa:** https://drive.google.com/drive/folders/1ooh1hQt-Wcepv96eoTZzMFSZhsmqs-8c
+
+| Parte | Conjunto | Link direto |
+|---|---|---|
+| 1 | Dados numéricos — `dataset_cardiologico.csv` (500 linhas × 25 colunas) | [abrir no Drive](https://drive.google.com/file/d/10SDWEPJh7bN1TGTBKK8nD7lCmRVRFKWo/view?usp=sharing) |
+| 2 | Dados textuais — 5 arquivos `.txt` (~13.700 palavras) | [pasta `textos`](https://drive.google.com/drive/folders/1ruf1in4AbqMbh_DUB54KftLUIHLF9yXt) |
+| 3 | Dados visuais — 120 imagens de ECG | [subpastas `normal`, `infarto_miocardio`, `arritmia`, `historico_infarto`](https://drive.google.com/drive/folders/1ooh1hQt-Wcepv96eoTZzMFSZhsmqs-8c) |
+
+Os arquivos das Partes 1 e 2 também estão versionados neste repositório (`data/` e `docs/`), servidos pelo GitHub via `raw.githubusercontent.com` como link alternativo de download direto.
 
 ## Estrutura do repositório
 
@@ -31,6 +51,7 @@ Nesta primeira fase o papel é o de cientista de dados hospitalar: levantar, org
 
 ### Link público para o dataset
 
+**Google Drive (link público):** https://drive.google.com/file/d/10SDWEPJh7bN1TGTBKK8nD7lCmRVRFKWo/view?usp=sharing
 Arquivo no repositório: `data/dataset_cardiologico.csv`
 Download direto (raw): https://raw.githubusercontent.com/VictorAraujopy/Inteligencia-Cardiologica/main/data/dataset_cardiologico.csv
 Formato `.csv` (UTF-8, separador vírgula), 500 linhas e 25 colunas, sem valores ausentes.
@@ -159,6 +180,18 @@ acadêmico técnico e artigos científicos revisados por pares.
   Fonte: 
   https://www.scielosp.org/article/rbepid/2021.v24suppl2/e210013/pt/
 
+### Links públicos para download dos textos
+
+Pasta no Drive: https://drive.google.com/drive/folders/1ruf1in4AbqMbh_DUB54KftLUIHLF9yXt
+
+| # | Texto | Drive | GitHub (raw) |
+|---|---|---|---|
+| 1 | Diretrizes Brasileiras de Hipertensão Arterial – 2020 | [Drive](https://drive.google.com/file/d/1FYS8TEN9BiZRMQTfwvSW6Lws-Zmhrjsj/view?usp=sharing) | [`texto1_diretrizes_has_2020.txt`](https://raw.githubusercontent.com/VictorAraujopy/Inteligencia-Cardiologica/main/docs/texto1_diretrizes_has_2020.txt) |
+| 2 | Carga de DCV nos Países de Língua Portuguesa (GBD 2019) | [Drive](https://drive.google.com/file/d/14uAY9ghkOk62DrsoR5tQcLigaQg9-4yb/view?usp=sharing) | [`texto2_carga_dcv_paises_lingua_portuguesa.txt`](https://raw.githubusercontent.com/VictorAraujopy/Inteligencia-Cardiologica/main/docs/texto2_carga_dcv_paises_lingua_portuguesa.txt) |
+| 3 | Cardiologia: Teoria e Prática — Capítulo 1 | [Drive](https://drive.google.com/file/d/1ZeTeVBQqcfn9QQCpW2t_OWjgHmHxp_Qc/view?usp=sharing) | [`texto3_cardiologia_teoria_pratica.txt`](https://raw.githubusercontent.com/VictorAraujopy/Inteligencia-Cardiologica/main/docs/texto3_cardiologia_teoria_pratica.txt) |
+| 4 | Prevenção de Doenças Cardiovasculares e Promoção da Saúde | [Drive](https://drive.google.com/file/d/13k6heBlboBcYb6538mzhcRnlv3IZ_3YE/view?usp=sharing) | [`texto4_prevencao_dcv_scielo.txt`](https://raw.githubusercontent.com/VictorAraujopy/Inteligencia-Cardiologica/main/docs/texto4_prevencao_dcv_scielo.txt) |
+| 5 | Fatores Associados às DCV na População Adulta Brasileira (PNS 2019) | [Drive](https://drive.google.com/file/d/1UF4wRKIzz8JLUWZDHtfcCb0YV3IzJtR-/view?usp=sharing) | [`texto5_fatores_risco_pns2019.txt`](https://raw.githubusercontent.com/VictorAraujopy/Inteligencia-Cardiologica/main/docs/texto5_fatores_risco_pns2019.txt) |
+
 ### Origem dos dados
 Os cinco textos são de acesso público e uso acadêmico: um é diretriz clínica 
 institucional publicada por sociedades médicas brasileiras, um é estudo 
@@ -216,7 +249,7 @@ Escolhi ECG porque as variáveis `depressao_st`, `angina_esforco` e `tipo_dor_pe
 
 As imagens foram deduplicadas por hash antes da seleção; a classe de infarto tem apenas 30 exames únicos, o que definiu o teto por classe. A origem de cada imagem está registrada em `assets/manifest_imagens.csv`.
 
-**Link do conjunto completo:** https://drive.google.com/drive/folders/1ooh1hQt-Wcepv96eoTZzMFSZhsmqs-8c
+**Link do conjunto completo:** https://drive.google.com/drive/folders/1ooh1hQt-Wcepv96eoTZzMFSZhsmqs-8c — as 120 imagens estão nas subpastas `normal`, `infarto_miocardio`, `arritmia` e `historico_infarto` (30 cada)
 **Amostra no repositório:** `assets/imagens_amostra/` (16 imagens, 4 por classe)
 
 ### Fonte
