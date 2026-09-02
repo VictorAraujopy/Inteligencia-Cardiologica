@@ -119,7 +119,92 @@ As variáveis abaixo são as que mais pesam na prática cardiológica e, por iss
 
 ## Parte 2 – Dados Textuais (NLP)
 
-Em construção. Os textos (.txt) ficarão na pasta `docs/`.
+Foram reunidos cinco textos em português, de três naturezas diferentes, para 
+compor um corpus mais representativo dos tipos de linguagem que um sistema 
+de IA em saúde precisa interpretar: diretrizes clínicas oficiais, um livro 
+acadêmico técnico e artigos científicos revisados por pares.
+
+- `docs/texto1_diretrizes_has_2020.txt` — Sociedade Brasileira de 
+  Cardiologia, Sociedade Brasileira de Hipertensão e Sociedade Brasileira de 
+  Nefrologia. "Diretrizes Brasileiras de Hipertensão Arterial – 2020". 
+  Documento normativo oficial, publicado nos Arquivos Brasileiros de 
+  Cardiologia. Fonte: 
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9949730/
+
+- `docs/texto2_carga_dcv_paises_lingua_portuguesa.txt` — "Carga de Doenças 
+  Cardiovasculares Atribuível aos Fatores de Risco nos Países de Língua 
+  Portuguesa: Dados do Estudo Global Burden of Disease 2019". Estudo 
+  epidemiológico institucional, comparando Brasil e Portugal, entre outros 
+  países de língua portuguesa. Fonte: 
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC9345142/
+
+- `docs/texto3_cardiologia_teoria_pratica.txt` — Capítulo 1 do livro 
+  "Cardiologia: Teoria e Prática" (Edição III), Editora Pasteur. Livro 
+  acadêmico de acesso aberto com capítulos técnicos sobre o sistema 
+  cardiovascular; o excerto trata do uso do eletrocardiograma no 
+  rastreamento de morte cardíaca súbita em jovens atletas. Fonte: 
+  https://editorapasteur.com.br/wp-content/uploads/2022/07/Cardiologia-Teoria-e-Pratica-Ed.-III.pdf
+
+- `docs/texto4_prevencao_dcv_scielo.txt` — Achutti, A. "Prevenção de 
+  Doenças Cardiovasculares e Promoção da Saúde". Ciência & Saúde Coletiva 
+  (SciELO). Artigo de discussão/opinião científica, linguagem argumentativa 
+  sobre a história e os princípios da promoção da saúde cardiovascular no 
+  Brasil. Fonte: 
+  https://www.scielo.br/j/csc/a/MnRMxsYBd8jmVtPLZSWVnyd/?lang=pt
+
+- `docs/texto5_fatores_risco_pns2019.txt` — "Fatores Associados às 
+  Doenças Cardiovasculares na População Adulta Brasileira: Pesquisa 
+  Nacional de Saúde, 2019". Revista Brasileira de Epidemiologia (SciELO 
+  Public Health). Artigo estatístico/epidemiológico com dados populacionais. 
+  Fonte: 
+  https://www.scielosp.org/article/rbepid/2021.v24suppl2/e210013/pt/
+
+### Origem dos dados
+Os cinco textos são de acesso público e uso acadêmico: um é diretriz clínica 
+institucional publicada por sociedades médicas brasileiras, um é estudo 
+epidemiológico institucional (GBD), um é capítulo de livro acadêmico aberto 
+publicado por uma editora científica, e dois são artigos revisados por pares 
+em periódicos indexados no SciELO. Nenhum contém dados pessoais 
+identificáveis de pacientes; apenas orientações técnicas, conteúdo 
+educacional e resultados agregados de pesquisa, o que reduz riscos de 
+governança relacionados a privacidade. Ainda assim, é preciso considerar o 
+viés de origem: os textos refletem majoritariamente o contexto 
+epidemiológico e as diretrizes médicas do Brasil (com um deles comparando 
+também outros países de língua portuguesa), o que deve ser levado em conta 
+ao generalizar conclusões para outras populações.
+
+### Como esses textos podem ser explorados por algoritmos de NLP
+- **Extração de entidades nomeadas (NER):** identificar automaticamente 
+  sintomas, fatores de risco (hipertensão, diabetes, colesterol, obesidade, 
+  tabagismo), classes de medicamentos e procedimentos citados nos cinco 
+  textos, transformando texto livre em dados estruturados.
+- **Classificação de tópicos:** treinar um classificador capaz de distinguir 
+  se um novo texto é normativo (diretriz clínica), didático (livro-texto), 
+  científico (artigo de pesquisa) ou de opinião/discussão, sendo útil para 
+  organizar automaticamente a base de conhecimento do CardioIA por tipo de 
+  fonte.
+- **Modelagem de tópicos (ex.: LDA) e extração de palavras-chave:** mapear 
+  os principais temas tratados em cada tipo de documento (diagnóstico, 
+  epidemiologia, fatores de risco, prevenção) e comparar como cada fonte 
+  aborda temas semelhantes com vocabulário diferente.
+- **Sumarização automática:** gerar resumos curtos de documentos longos 
+  (como a diretriz de hipertensão, com mais de 100 páginas no original), 
+  facilitando a consulta rápida por um agente inteligente de triagem.
+- **Análise de complexidade textual/legibilidade:** comparar o nível de 
+  complexidade linguística entre a diretriz oficial (mais estruturada em 
+  graus de recomendação), o capítulo do livro acadêmico (mais técnico), o 
+  artigo estatístico e o texto de opinião (mais narrativo), orientando como 
+  o CardioIA adapta explicações para pacientes leigos versus profissionais 
+  de saúde.
+
+### Relevância para o projeto
+Combinar diretrizes clínicas oficiais, literatura acadêmica e artigos 
+científicos de diferentes estilos prepara o sistema para lidar com a 
+diversidade real de textos médicos que um agente inteligente encontraria em 
+produção, de protocolos oficiais a literatura de pesquisa e textos de 
+opinião especializada, além de reforçar a importância de rastrear a origem de 
+cada fonte (governança de dados), já que o tipo de documento influencia o 
+nível de confiança e o público-alvo da informação extraída.
 
 ## Parte 3 – Dados Visuais (VC)
 
